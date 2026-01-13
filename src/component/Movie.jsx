@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import MovieCard from './MovieCard'
 import axios from 'axios'
 import Pagination from './Pagination'
-import InterceptorManager from './../../node_modules/axios/lib/core/InterceptorManager';
 
-function Movie() {
+
+function Movie({handleAddtoWatchList,handleRemoveFromWatchlist,watchlist}) {
 
     const[movies,setMovies]=useState([])
     const[page,setPage]=useState(1)
@@ -36,7 +36,7 @@ function Movie() {
         <div className='flex flex-row flex-wrap ml-13 gap-10 '>
             {/* Take each and every movie */}
             {movies.map((movieObj)=>{
-                return <MovieCard poster_path={movieObj.poster_path} name={movieObj.title} />
+                return <MovieCard key={movieObj.id} movieObj={movieObj} poster_path={movieObj.poster_path} name={movieObj.title} handleAddtoWatchList={handleAddtoWatchList} handleRemoveFromWatchlist={handleRemoveFromWatchlist} watchlist={watchlist} />
             })}
         </div>
         <Pagination page={page} incrementPage={incrementPage} decrementPage={decrementPage}/>
@@ -48,4 +48,3 @@ function Movie() {
 export default Movie
 
 
-//https://api.themoviedb.org/3/movie/popular?api_key=a0009c00186c2a7f4fe66faaa0705f81
