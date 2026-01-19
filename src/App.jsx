@@ -29,11 +29,11 @@ function App() {
   }
  //store the movie in the watchlist using localstorage
   useEffect(()=>{
-    let moviewatchlist=localStorage.getItem('movieApp')
-    if(moviewatchlist){
+    let moviefromlocal=localStorage.getItem('movieApp')
+    if(!moviefromlocal){
       return
     }
-    setWatchlist(JSON.parse(moviewatchlist))
+    setWatchlist(JSON.parse(moviefromlocal))
   },[])
   
   return (
