@@ -1,6 +1,6 @@
 import React from 'react'
 
-function WatchList() {
+function WatchList({watchlist}) {
   return (
     <>
 
@@ -23,16 +23,20 @@ function WatchList() {
                 </tr>
             </thead>
             <tbody>
-                <tr className='border-b-2'>
+              {/* Dynamically add the watchlist */}
+              {watchlist.map((movieObj)=>{
+                return <tr key={movieObj.id} className='border-b-2'>
                   <td className='flex items-center px-6 py-4'>
-                    <img className='h-[8rem] w-[8rem]' src={`https://images-cdn.ubuy.co.in/68b1b650d9f8d3e89e042c52-star-wars-rogue-one-movie-poster.jpg`} alt="" />
-                    <div className='mx-20'>The War</div>
+                    <img className='h-[8rem] w-[8rem]' src={`https://image.tmdb.org/t/p/original/${movieObj.poster_path}`}/>
+                    <div className='mx-20'>{movieObj.title}</div>
                   </td>
-                  <td>8.5</td>
-                  <td>9</td>
+                  <td>{movieObj.vote_average}</td>
+                  <td>{movieObj.popularity}</td>
                   <td>Action</td>
                   <td className='text-red-600 hover:scale-120 cursor-pointer'>Delete</td>
                 </tr>
+              })}
+               
 
                 
             </tbody>

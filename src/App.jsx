@@ -5,14 +5,16 @@ import Movie from './component/Movie';
 import WatchList from './component/WatchList';
 import { Route, Routes } from "react-router-dom"
 import Banner from './component/Banner';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
   let [watchlist,setWatchlist]=useState([]) 
-
+  
+  //Add the movie to the watchlist when click the emoji
   let handleAddtoWatchList =(movieObj)=>{
     let newMovieList=[...watchlist,movieObj]
+    localStorage.setItem('movieApp',JSON.stringify(newMovieList))
     setWatchlist(newMovieList)
     console.log(newMovieList)
   }
@@ -25,6 +27,14 @@ function App() {
     setWatchlist(filteredWatchList)
     console.log(filteredWatchList)
   }
+ //store the movie in the watchlist using localstorage
+  useEffect(()=>{
+    let moviewatchlist=localStorage.getItem('movieApp')
+    if(moviewatchlist){
+      return
+    }
+    setWatchlist(JSON.parse(moviewatchlist))
+  },[])
   
   return (
     <>
@@ -33,7 +43,7 @@ function App() {
     <Routes>
       <Route path='/' 
              element={<> <Banner/> <Movie watchlist={watchlist} handleAddtoWatchList={handleAddtoWatchList} handleRemoveFromWatchlist={handleRemoveFromWatchlist}/> </>}/>
-      <Route path='/watchlist' element={<WatchList/>}/>
+      <Route path='/watchlist' element={<WatchList  watchlist={watchlist}/>}/>
     </Routes>
     
 
