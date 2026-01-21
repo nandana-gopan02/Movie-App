@@ -16,7 +16,7 @@ function App() {
     let newMovieList=[...watchlist,movieObj]
     localStorage.setItem('movieApp',JSON.stringify(newMovieList))
     setWatchlist(newMovieList)
-    console.log(newMovieList)
+    // console.log(newMovieList)
   }
 
   //Remove the movie from the watchlist
@@ -25,6 +25,7 @@ function App() {
       return movie.id != movieObj.id
     })
     setWatchlist(filteredWatchList)
+    localStorage.setItem('movieApp',JSON.stringify(filteredWatchList))
     console.log(filteredWatchList)
   }
  //store the movie in the watchlist using localstorage
@@ -43,7 +44,7 @@ function App() {
     <Routes>
       <Route path='/' 
              element={<> <Banner/> <Movie watchlist={watchlist} handleAddtoWatchList={handleAddtoWatchList} handleRemoveFromWatchlist={handleRemoveFromWatchlist}/> </>}/>
-      <Route path='/watchlist' element={<WatchList  watchlist={watchlist}/>}/>
+      <Route path='/watchlist' element={<WatchList  watchlist={watchlist} setWatchlist={setWatchlist} handleRemoveFromWatchlist={handleRemoveFromWatchlist}/>}/>
     </Routes>
     
 
