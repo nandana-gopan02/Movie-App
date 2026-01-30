@@ -65,7 +65,7 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
   return (
     <>
     {/* Populate all the genre id at the top */}
-      <div className='flex justify-center flex-wrap m-4 space-x-10 '>
+      <div className=' flex justify-center flex-wrap m-4 space-x-10 '>
         {genrelist.map((genre)=>{
           return <div onClick={()=> handleFilter(genre)} className={currGenre == genre ? 'flex justify-center items-center bg-blue-400 rounded-xl text-white p-2 cursor-pointer ': 'flex justify-center items-center bg-gray-300 rounded-xl text-black p-2 cursor-pointer '}>
           {genre}
