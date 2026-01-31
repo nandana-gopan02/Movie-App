@@ -43,7 +43,7 @@ function App() {
 
     <Routes>
       <Route path='/' 
-             element={<> <Banner/> <Movie watchlist={watchlist} handleAddtoWatchList={handleAddtoWatchList} handleRemoveFromWatchlist={handleRemoveFromWatchlist}/> </>}/>
+             element={<> <Movie watchlist={watchlist} handleAddtoWatchList={handleAddtoWatchList} handleRemoveFromWatchlist={handleRemoveFromWatchlist}/> </>}/>
       <Route path='/watchlist' element={<WatchList  watchlist={watchlist} setWatchlist={setWatchlist} handleRemoveFromWatchlist={handleRemoveFromWatchlist}/>}/>
     </Routes>
     

@@ -77,7 +77,7 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
 
       {/* Search */}
       <div className='flex justify-center my-5'>
-        <input onChange={handleSearch} value={search} type="text"placeholder='Search the Movie' className='h-[2rem] w-[250px] bg-gray-300 p-4 rounded-xl outline-none ' />
+        <input onChange={handleSearch} value={search} type="text"placeholder='Search the Movie' className='h-[2rem] w-[250px] bg-[#78898f] text-[#e4d6c5] p-4 rounded-xl outline-none ' />
       </div>
 
 
