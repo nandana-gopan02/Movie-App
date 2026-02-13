@@ -67,7 +67,7 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
     {/* Populate all the genre id at the top */}
       <div className=' flex justify-center flex-wrap m-4 space-x-10 '>
         {genrelist.map((genre)=>{
-          return <div onClick={()=> handleFilter(genre)} className={currGenre == genre ? 'flex justify-center items-center bg-blue-400 rounded-xl text-white p-2 cursor-pointer ': 'flex justify-center items-center bg-gray-300 rounded-xl text-black p-2 cursor-pointer '}>
+          return <div onClick={()=> handleFilter(genre)} className={currGenre == genre ? 'flex justify-center items-center bg-[#c54e04] rounded-xl text-white p-2 cursor-pointer ': 'flex justify-center items-center bg-gray-400 rounded-xl text-black p-2 cursor-pointer '}>
           {genre}
           </div>
 
@@ -77,7 +77,7 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
 
       {/* Search */}
       <div className='flex justify-center my-5'>
-        <input onChange={handleSearch} value={search} type="text"placeholder='Search the Movie' className='h-[2rem] w-[250px] bg-[#78898f] text-[#e4d6c5] p-4 rounded-xl outline-none ' />
+        <input onChange={handleSearch} value={search} type="text"placeholder='Search the Movie' className='h-[2rem] w-[250px] bg-gray-400 text-white p-4 rounded-xl outline-none ' />
       </div>
 
 
