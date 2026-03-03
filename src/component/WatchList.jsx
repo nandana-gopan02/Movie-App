@@ -63,7 +63,7 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
   },[watchlist])
 
   return (
-    <>
+    <div className='px-2 sm:px-4 md:px-8'>
     {/* Populate all the genre id at the top */}
       <div className=' flex justify-center flex-wrap m-4 space-x-10 '>
         {genrelist.map((genre)=>{
@@ -81,13 +81,13 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
       </div>
 
 
-      <div className='overflow-hidden rounded-xl border border-gray-400 m-8 p-8'>
-        <table className='w-full text-gray-600 text-center'>
+      <div className='overflow-hidden rounded-xl border border-gray-400 m-2 md:m-8 p-2 md:p-8'>
+        <table className='md:w-full text-gray-600 text-center'>
             <thead className='border-b-2'>
                 <tr className=''>
-                    <th className='px-15'>Name</th>
+                    <th className='px-6 md:px-15'>Name</th>
 
-                    <th className='px-15'>
+                    <th className='px-6 md:px-15'>
                       <div className='flex items-center justify-center gap-2'>
                         <button onClick={sortIncreasing} className='cursor-pointer'><i class="fa-solid fa-arrow-up"></i></button>
                         <span>Rating</span>
@@ -95,7 +95,7 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
                       </div>
                     </th>
 
-                    <th className='px-15'>
+                    <th className='px-6 md:px-15'>
                       <div className='flex items-center justify-center gap-2'>
                         <button onClick={sortPopIncrease} className='cursor-pointer'><i class="fa-solid fa-arrow-up"></i></button>
                         <span>Popularity</span>
@@ -103,7 +103,7 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
                       </div>
                     </th>
 
-                    <th className='px-15 text-center'>Genre</th>
+                    <th className='px-6 md:px-15 text-center'>Genre</th>
                 </tr>
             </thead>
 
@@ -147,7 +147,7 @@ function WatchList({watchlist,setWatchlist,handleRemoveFromWatchlist}) {
             </tbody>
         </table>
       </div>
-    </>
+    </div>
   )
 }
 

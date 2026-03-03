@@ -5,6 +5,7 @@ import Pagination from './Pagination'
 import Banner from './Banner'
 
 
+
 function Movie({handleAddtoWatchList,handleRemoveFromWatchlist,watchlist}) {
 
     const[movies,setMovies]=useState([])
@@ -62,6 +63,8 @@ function Movie({handleAddtoWatchList,handleRemoveFromWatchlist,watchlist}) {
         <Banner banner_path={bannerMovie.backdrop_path
 } name={bannerMovie.title}/>
     )}
+
+    
     
     <div className='p-2'>
         <div className='text-center m-4 text-2xl font-bold'>Trending Movies</div>

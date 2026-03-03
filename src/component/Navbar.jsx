@@ -5,11 +5,11 @@ import {Link} from "react-router-dom"
 const Navbar = () => {
   return (
     <div className='w-full '>
-      <div className='bg-[#c54e04] flex space-x-10 items-center pl-3 py-1'>
-      <img className='w-18'  src={Logo} alt="" />
+      <div className='bg-[#c54e04] flex space-x-5 md:space-x-10 items-center pl-3 py-1'>
+      <img className='w-14 md:w-18'  src={Logo} alt="" />
 
-      <Link to="/" className='text-[#e4d6c5] text-2xl font-semibold font-sans'>Home</Link>
-      <Link to="/watchlist" className='text-[#e4d6c5] text-2xl font-semibold font-sans'>WatchList </Link>
+      <Link to="/" className='text-[#e4d6c5] text-xl md:text-2xl font-semibold font-sans'>Home</Link>
+      <Link to="/watchlist" className='text-[#e4d6c5] text-xl md:text-2xl font-semibold font-sans'>WatchList </Link>
 
     </div>
 
